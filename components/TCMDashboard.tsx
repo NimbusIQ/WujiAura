@@ -46,6 +46,7 @@ import {
 import { runTCMAgentAnalysis } from '../services/tcmAgent';
 import { TCMVisualizer } from './TCMVisualizer';
 import { CircadianOrganClock, OrganPeriod } from './CircadianOrganClock';
+import { ConciergeEngine } from './ConciergeEngine';
 import { PulseVisualizer } from './PulseVisualizer';
 import { TongueAnalysisTool } from './TongueAnalysisTool';
 import { DiagnosticReport } from './DiagnosticReport';
@@ -85,7 +86,7 @@ export const TCMDashboard: React.FC = () => {
   const [isTranscribing, setIsTranscribing] = useState(false);
   
   // Navigation & View State
-  const [activeNavTab, setActiveNavTab] = useState<'all' | 'diagnostics' | 'tongue' | 'pulse' | 'clock' | 'report' | 'camera' | 'voice' | 'notebook' | 'agents'>('all');
+  const [activeNavTab, setActiveNavTab] = useState<'all' | 'concierge' | 'diagnostics' | 'tongue' | 'pulse' | 'clock' | 'report' | 'camera' | 'voice' | 'notebook' | 'agents'>('all');
   const [isDeterministic, setIsDeterministic] = useState(false);
   const [masteryMode, setMasteryMode] = useState<'YU' | 'WUJI'>('YU');
   const [visualizerView, setVisualizerView] = useState<'HOLOGRAPHIC' | 'DATA' | 'WUXING'>('HOLOGRAPHIC');
@@ -436,6 +437,17 @@ export const TCMDashboard: React.FC = () => {
           Full Command Stage
         </button>
         <button
+          onClick={() => setActiveNavTab('concierge')}
+          className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 ${
+            activeNavTab === 'concierge'
+              ? 'bg-gradient-to-r from-cyan-600 to-teal-600 text-white shadow-sm shadow-cyan-600/30 border border-cyan-400/40'
+              : 'bg-[#061e27]/60 hover:bg-cyan-950/60 text-slate-300 border border-cyan-500/20'
+          }`}
+        >
+          <ShieldCheck className="w-3.5 h-3.5" />
+          Dr. Yu Private Concierge
+        </button>
+        <button
           onClick={() => setActiveNavTab('diagnostics')}
           className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 ${
             activeNavTab === 'diagnostics'
@@ -541,6 +553,24 @@ export const TCMDashboard: React.FC = () => {
         
         {/* Left Interactive Laboratory */}
         <div className="flex-1 overflow-y-auto p-4 md:p-8 space-y-10 scrollbar-organic">
+
+          {/* 0. DR. YU PRIVATE CONCIERGE (DUAL-LAYER OBSERVE -> UNDERSTAND -> ACT) */}
+          {(activeNavTab === 'all' || activeNavTab === 'concierge') && (
+            <section aria-label="Dr. Yu Private Concierge">
+              <ConciergeEngine
+                onSyncConcierge={(dossier) => {
+                  setMessages((prev) => [
+                    ...prev,
+                    {
+                      role: 'ai',
+                      text: `[DR. YU PRIVATE CONCIERGE — DUAL-LAYER DOSSIER]\n\nLayer 1 Barrier Audit: ${dossier.layer1BarrierAudit.tewlAssessment}\nBarrier Protocol: ${dossier.layer1BarrierAudit.barrierProtocol}\n\nLayer 2 Constitutional Pattern: ${dossier.layer2ConstitutionalPattern.pattern}\nObservation: ${dossier.layer2ConstitutionalPattern.tcm_observation}\nWu Xing Cycle: ${dossier.layer2ConstitutionalPattern.wuXingCycle}\n\nCurated Partner Basket (${dossier.affiliateBasket.items.length} items | $${dossier.affiliateBasket.totalGMV.toFixed(2)} GMV | ${dossier.affiliateBasket.blendedTakeRate}% Take Rate):\n${dossier.affiliateBasket.items.map((i) => `- ${i.name} (${i.partner}, $${i.price.toFixed(2)})`).join('\n')}\n\nSafety Guardrail: ${dossier.safety_note}`,
+                      sources: [{ uri: 'https://tcmwiki.com/', title: 'Nimbus IQ Dual-Layer Constitution Engine' }]
+                    }
+                  ]);
+                }}
+              />
+            </section>
+          )}
 
           {/* 1. CENTERPIECE: MODERN TCM ORGAN DIAGNOSTICS (Inspired by reference image) */}
           {(activeNavTab === 'all' || activeNavTab === 'diagnostics') && (
