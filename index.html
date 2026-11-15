@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aura Lens – Modern Holographic TCM Diagnostics & Clinical Organ Lab</title>
+    <meta name="description" content="Next-generation holographic Traditional Chinese Medicine diagnostic lab integrating Five Elements energy telemetry, Zang-Fu organ chronobiology, and dual-grounded AI." />
+    
+    <!-- OpenGraph Social Cards -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Aura Lens – Modern Holographic TCM Diagnostics & Clinical Organ Lab" />
+    <meta property="og:description" content="Next-generation holographic Traditional Chinese Medicine diagnostic lab integrating Five Elements energy telemetry, Zang-Fu organ chronobiology, and dual-grounded AI." />
+    <meta property="og:site_name" content="Aura Lens TCM Laboratory" />
+    
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aura Lens – Modern Holographic TCM Diagnostics" />
+    <meta name="twitter:description" content="Next-generation holographic Traditional Chinese Medicine diagnostic lab integrating Five Elements energy telemetry and Zang-Fu organ chronobiology." />
+    <meta name="theme-color" content="#030a0e" />
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://auralens.tcm/#app",
+          "name": "Aura Lens Modern TCM Diagnostics",
+          "applicationCategory": "HealthApplication",
+          "operatingSystem": "Web",
+          "description": "Holographic clinical diagnostic console for Traditional Chinese Medicine (TCM), organ chronobiology, and Five Elements pulse telemetry.",
+          "featureList": [
+            "Holographic Zang-Fu Organ Mapping",
+            "Five Elements Wu Xing Generative and Control Energy Network",
+            "Arterial Pulse Waveform Oscillogram (Cun, Guan, Chi)",
+            "Spectral Tongue Thermography and Dampness Analysis",
+            "361 Classical Acupuncture Meridian Retrieval",
+            "Circadian Organ Clock Chronobiology",
+            "Dual-Grounded AI with Google Search and NotebookLM"
+          ]
+        },
+        {
+          "@type": "MedicalWebPage",
+          "@id": "https://auralens.tcm/#webpage",
+          "name": "Modern TCM Organ Diagnostics & Clinical Laboratory",
+          "about": [
+            {
+              "@type": "MedicalCondition",
+              "name": "Zang-Fu Organ Imbalance and Qi Stagnation"
+            },
+            {
+              "@type": "MedicalTherapy",
+              "name": "Traditional Chinese Medicine, Acupuncture, and Botanical Phytotherapy"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@500;700;900&display=swap');
+      
+      :root {
+        --font-sans: 'Plus Jakarta Sans', sans-serif;
+        --font-serif: 'Playfair Display', serif;
+        --font-mono: 'JetBrains Mono', monospace;
+        --font-chinese: 'Noto Serif SC', serif;
+      }
+
+      body {
+        font-family: var(--font-sans);
+        background-color: #030a0e;
+        color: #f1f5f9;
+      }
+      
+      .bg-hologram-grid {
+        background-size: 32px 32px;
+        background-image: 
+          linear-gradient(to right, rgba(6, 182, 212, 0.05) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+    "@heroicons/react/24/outline": "https://aistudiocdn.com/@heroicons/react@^2.2.0/24/outline",
+    "@heroicons/react/24/solid": "https://aistudiocdn.com/@heroicons/react@^2.2.0/24/solid",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@heroicons/react/": "https://aistudiocdn.com/@heroicons/react@^2.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

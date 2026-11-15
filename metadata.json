@@ -1,0 +1,18 @@
+{
+  "name": "Aura Lens - Modern Holographic TCM Diagnostics",
+  "description": "A next-generation holographic Traditional Chinese Medicine clinical laboratory integrating Zang-Fu organ diagnostics, Five Elements energy telemetry, and dual-grounded AI research.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "Holographic Zang-Fu Organ Diagnostics",
+    "Five Elements Wu Xing Energy Telemetry",
+    "Arterial Pulse Waveform & Tongue Thermography",
+    "Precision Vector RAG (361 Acupuncture Points)",
+    "Circadian Organ Clock Chronobiology",
+    "Dual-Grounded AI (Google Search + NotebookLM)",
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
